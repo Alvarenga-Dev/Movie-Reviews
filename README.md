@@ -4,7 +4,7 @@ O desafio foi desenvolvido em Kotlin e consistia em uma aplicação para a leitu
 
 ## ⛏️ Arquitetura 
 
-- MVVM (Model-ViewModel-View)
+- MVVM (Model–View–ViewModel)
 
 A arquitetura utilizada no projeto foi o MVVM, pois vem sendo fortemente adotada pela comunidade de Devs Android, além disso, muitos recursos mais recentes do Android, trabalham muito bem em conjunto com essa arquitetura.
 
