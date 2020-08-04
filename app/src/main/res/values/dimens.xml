@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Text Size -->
+    <dimen name="text_size_title">20sp</dimen>
+    <dimen name="text_size_sub_header">16sp</dimen>
+    <dimen name="text_size_body">14sp</dimen>
+    <dimen name="text_size_caption">12sp</dimen>
+
+    <!-- List Cards Dimens -->
+    <dimen name="card_width">155dp</dimen>
+    <dimen name="card_height">125dp</dimen>
+    <dimen name="card_corner_radius">10dp</dimen>
+    <dimen name="card_elevation">6dp</dimen>
+
+    <!-- Button Dimen -->
+    <dimen name="btn_radius">10dp</dimen>
+    <dimen name="btn_text_size">18dp</dimen>
+    <dimen name="btn_padding_vertical">15dp</dimen>
+    <dimen name="btn_padding_horizontal">20dp</dimen>
+
+</resources>

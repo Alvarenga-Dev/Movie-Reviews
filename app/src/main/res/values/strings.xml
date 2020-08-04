@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Movie Reviews</string>
+
+    <!-- Home Fragment -->
+    <string name="label_toolbar_home">Home</string>
+
+    <!-- Home menu -->
+    <string name="menu_label_search_home">Search</string>
+
+    <!-- Review Fragment -->
+    <string name="image_description_error_api">Oops! Something went wrong, check your connection.</string>
+
+    <!-- Favorites Fragment -->
+    <string name="image_description_list_favorites_empty_favorite">People with an empty box, indicating that the favorites on your list are empty.</string>
+
+    <!-- Details Fragment -->
+    <string name="image_description_people_read_critic_details">Woman read movie critics!</string>
+    <string name="btn_text_open_critic_review">Read all review</string>
+
+    <!-- Details Menu -->
+    <string name="menu_label_share_details">Share Link</string>
+    <string name="menu_label_mark_details">Mark Favorite</string>
+
+    <!-- Dialog´s Buttons -->
+    <string name="btn_text_cancel_dialog">NO</string>
+    <string name="btn_text_confirm_dialog">YES</string>
+
+    <!-- Dialog Add Favorite -->
+    <string name="tv_title_dialog_add">Add to favorites?</string>
+    <string name="tv_description_dialog_add">Do you want to add this article as a favorite?</string>
+
+    <!-- Dialog Remove Favorite -->
+    <string name="tv_title_dialog_remove">Remove to favorites?</string>
+    <string name="tv_description_dialog_remove">Do you want to remove this article as a favorite?</string>
+
+</resources>
