@@ -31,7 +31,10 @@ class DetailsFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_details, container, false)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    override fun onViewCreated(
+        view: View,
+        savedInstanceState: Bundle?
+    ) {
         super.onViewCreated(view, savedInstanceState)
         setHasOptionsMenu(true)
 
@@ -61,7 +64,10 @@ class DetailsFragment : Fragment() {
         startActivity(openLinkIntent)
     }
 
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+    override fun onCreateOptionsMenu(
+        menu: Menu,
+        inflater: MenuInflater
+    ) {
         inflater.inflate(R.menu.menu_review_details, menu)
         super.onCreateOptionsMenu(menu, inflater)
 
@@ -78,7 +84,6 @@ class DetailsFragment : Fragment() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val id = item.itemId
-
 
         if (id == R.id.menu_item_share_link_details) {
             val sharedIntent = Intent(Intent.ACTION_SEND)

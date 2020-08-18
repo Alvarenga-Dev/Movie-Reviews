@@ -16,7 +16,9 @@ import com.alvarengadev.moviereviews.view.home.HomeViewModel
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
-class DialogRemoveFavorite(private val review: Review) : AppCompatDialogFragment() {
+class DialogRemoveFavorite(
+    private val review: Review
+) : AppCompatDialogFragment() {
 
     private val homeViewModel: HomeViewModel by activityViewModels()
 
