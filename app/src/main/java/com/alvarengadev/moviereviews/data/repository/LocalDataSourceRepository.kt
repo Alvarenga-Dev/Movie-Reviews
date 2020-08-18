@@ -9,6 +9,6 @@ class LocalDataSourceRepository(private val dao: ReviewsFavoritesDao) {
 
     suspend fun removeFavorite(review: Review) = dao.delete(review)
 
-    suspend fun getReviews(): List<Review> = dao.getAll()
+    suspend fun getReviews(): ArrayList<Review> = ArrayList(dao.getAll())
 
 }
