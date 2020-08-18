@@ -13,7 +13,8 @@ class HomeViewModel(
 ) : ViewModel() {
 
     val movieCriticsReviewData: MutableLiveData<ArrayList<Review>> = MutableLiveData()
-    val getMoviesCriticsReviewFavoritesData: MutableLiveData<List<Review>> = MutableLiveData()
+    val getMoviesCriticsReviewFavoritesData: MutableLiveData<ArrayList<Review>> = MutableLiveData()
+    val searchReviewData: MutableLiveData<String> = MutableLiveData()
     val isRemoveData: MutableLiveData<Boolean> = MutableLiveData()
 
     fun getReviews() {
