@@ -29,7 +29,8 @@ class ApiDataSourceRepository(
 
     override fun onFailure(
         call: Call<ReviewsResult>,
-        throwable: Throwable) {
+        throwable: Throwable
+    ) {
         liveData.value = null
     }
 
