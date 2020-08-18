@@ -9,12 +9,17 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class ApiDataSourceRepository(private val liveData: MutableLiveData<ArrayList<Review>>) : Callback<ReviewsResult>{
+class ApiDataSourceRepository(
+    private val liveData: MutableLiveData<ArrayList<Review>>
+) : Callback<ReviewsResult> {
 
     fun callRetrofitApi() =
         RetrofitInitializer().reviewService().list().enqueue(this)
 
-    override fun onResponse(call: Call<ReviewsResult>, response: Response<ReviewsResult>) {
+    override fun onResponse(
+        call: Call<ReviewsResult>,
+        response: Response<ReviewsResult>
+    ) {
         if (response.isSuccessful) {
             response.body()?.let {
                 liveData.value = ReviewMapper.responseToDomain(it.results)
@@ -22,7 +27,9 @@ class ApiDataSourceRepository(private val liveData: MutableLiveData<ArrayList<Re
         }
     }
 
-    override fun onFailure(call: Call<ReviewsResult>, t: Throwable) {
+    override fun onFailure(
+        call: Call<ReviewsResult>,
+        throwable: Throwable) {
         liveData.value = null
     }
 
