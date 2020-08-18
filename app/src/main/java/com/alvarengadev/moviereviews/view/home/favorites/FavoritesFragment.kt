@@ -37,6 +37,11 @@ class FavoritesFragment : Fragment(), OnReviewClickListener {
                 } else {
                     visibilities(invisible = iv_list_favorites_empty, visible = rcy_favorites)
                     val favoritesAdapter = FavoritesAdapter(favorites)
+
+                    homeViewModel.searchReviewData.observe(viewLifecycleOwner, Observer { titleSearch ->
+                        favoritesAdapter.filter.filter(titleSearch)
+                    })
+
                     favoritesAdapter.setOnItemClickListener(this)
                     rcy_favorites.apply {
                         adapter = favoritesAdapter

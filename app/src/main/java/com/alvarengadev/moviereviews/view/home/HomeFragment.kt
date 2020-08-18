@@ -2,8 +2,9 @@ package com.alvarengadev.moviereviews.view.home
 
 import android.os.Bundle
 import android.view.*
-import android.widget.Toast
+import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import com.alvarengadev.moviereviews.R
 import com.alvarengadev.moviereviews.view.home.favorites.FavoritesFragment
 import com.alvarengadev.moviereviews.view.home.reviews.ReviewsFragment
@@ -11,7 +12,9 @@ import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems
 import kotlinx.android.synthetic.main.fragment_home.*
 
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(), SearchView.OnQueryTextListener {
+
+    private val homeViewModel: HomeViewModel by activityViewModels()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_home, container, false)
@@ -35,16 +38,28 @@ class HomeFragment : Fragment() {
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.menu_search_reviews, menu)
+
+
+        val searchItem = menu.findItem(R.id.menu_search_review)
+        val searchView = searchItem.actionView as SearchView
+
+        searchView.setOnQueryTextListener(this)
+        searchView.setOnCloseListener {
+            homeViewModel.searchReviewData.value = ""
+            false
+        }
+
         super.onCreateOptionsMenu(menu, inflater)
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+   override fun onQueryTextSubmit(textSubmit: String?): Boolean {
+       homeViewModel.searchReviewData.value = textSubmit
+       return false
+   }
 
-        if (item.itemId == R.id.menu_search_review) {
-            Toast.makeText(context, "Search", Toast.LENGTH_SHORT).show()
-        }
-
-        return super.onOptionsItemSelected(item)
-    }
+   override fun onQueryTextChange(textChange: String?): Boolean {
+       homeViewModel.searchReviewData.value = textChange
+       return false
+   }
 
 }

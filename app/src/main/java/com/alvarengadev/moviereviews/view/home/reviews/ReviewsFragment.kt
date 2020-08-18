@@ -41,12 +41,17 @@ class ReviewsFragment : Fragment(),
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        homeViewModel.movieCriticsReviewData.observe(viewLifecycleOwner, Observer {reviews ->
+        homeViewModel.movieCriticsReviewData.observe(viewLifecycleOwner, Observer { reviews ->
             if (reviews == null) {
                 visibilities(invisible = progress_bar, visible = iv_message_error)
             } else {
                 visibilities(invisible = progress_bar, visible = rcy_movies_critics_reviews)
                 val reviewsAdapter = ReviewsAdapter(reviews)
+
+                homeViewModel.searchReviewData.observe(viewLifecycleOwner, Observer { titleSearch ->
+                    reviewsAdapter.filter.filter(titleSearch)
+                })
+
                 reviewsAdapter.setOnItemClickListener(this)
                 rcy_movies_critics_reviews.apply {
                     adapter = reviewsAdapter
