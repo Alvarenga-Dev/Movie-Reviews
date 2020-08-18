@@ -16,11 +16,18 @@ class HomeFragment : Fragment(), SearchView.OnQueryTextListener {
 
     private val homeViewModel: HomeViewModel by activityViewModels()
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    override fun onViewCreated(
+        view: View,
+        savedInstanceState: Bundle?
+    ) {
         super.onViewCreated(view, savedInstanceState)
         setHasOptionsMenu(true)
 
@@ -36,9 +43,11 @@ class HomeFragment : Fragment(), SearchView.OnQueryTextListener {
         tab_layout_home.setViewPager(viewpager_tab_layout_home)
     }
 
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+    override fun onCreateOptionsMenu(
+        menu: Menu,
+        inflater: MenuInflater
+    ) {
         inflater.inflate(R.menu.menu_search_reviews, menu)
-
 
         val searchItem = menu.findItem(R.id.menu_search_review)
         val searchView = searchItem.actionView as SearchView
@@ -52,12 +61,16 @@ class HomeFragment : Fragment(), SearchView.OnQueryTextListener {
         super.onCreateOptionsMenu(menu, inflater)
     }
 
-   override fun onQueryTextSubmit(textSubmit: String?): Boolean {
+   override fun onQueryTextSubmit(
+       textSubmit: String?
+   ): Boolean {
        homeViewModel.searchReviewData.value = textSubmit
        return false
    }
 
-   override fun onQueryTextChange(textChange: String?): Boolean {
+   override fun onQueryTextChange(
+       textChange: String?
+   ): Boolean {
        homeViewModel.searchReviewData.value = textChange
        return false
    }
