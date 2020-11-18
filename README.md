@@ -21,6 +21,6 @@ A arquitetura utilizada no projeto foi o MVVM, pois vem sendo fortemente adotada
 
 **Lucas Alvarenga - Android Developer**
 
-- Meu Portfólio: https://alvarengadev.firebaseapp.com
+- Meu Portfólio: https://www.alvarenga.dev/
 - Instagram: [@Alvarenga.dev](https://www.instagram.com/alvarenga.dev/)
 - Github: [@Alvarenga-Dev](https://github.com/Alvarenga-Dev)
